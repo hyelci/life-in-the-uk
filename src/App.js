@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Landing from "./pages/Landing";
+import Handbook from "./components/Handbook";
+import SharedLayout from "./components/SharedLayout";
+import MockTests from "./components/MockTests";
+import Questions from "./components/Questions";
+import HandbookDetails from "./components/HandbookDetails";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="" element={<SharedLayout />}>
+          <Route path="" element={<Landing />}></Route>
+          <Route path="/handbook" element={<Handbook />}></Route>
+          <Route path="/mockTests" element={<MockTests />}></Route>
+          <Route path="/questions/:id" element={<Questions />}></Route>
+          <Route path="/handbook/:id" element={<HandbookDetails />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
