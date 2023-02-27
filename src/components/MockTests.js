@@ -12,10 +12,11 @@ const MockTests = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container list-group">
+      <h2 className="text-center">Mock Tests</h2>
       {mockTests?.map((mockTest) => {
         return (
-          <div key={mockTest.id}>
+          <div key={mockTest.id} className="list-group-item-secondary p-3">
             <Link to={`/questions/${mockTest.id}`}>{mockTest.title}</Link>
           </div>
         );

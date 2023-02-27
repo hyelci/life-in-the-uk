@@ -1,0 +1,13 @@
+.pagination {
+  width: 50px;
+  height: 40px;
+}
+
+.btn {
+  height: 40px;
+  width: 70px;
+}
+
+.options-wrapper {
+  max-width: 500px;
+}

@@ -2,11 +2,11 @@ import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
-import Handbook from "./components/Handbook";
+import Handbook from "./pages/Handbook";
 import SharedLayout from "./components/SharedLayout";
 import MockTests from "./components/MockTests";
-import Questions from "./components/Questions";
-import HandbookDetails from "./components/HandbookDetails";
+import Questions from "./pages/Questions";
+import HandbookDetails from "./pages/HandbookDetails";
 
 function App() {
   return (

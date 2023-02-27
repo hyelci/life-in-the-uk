@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
-import Handbook from "../components/Handbook";
 import Navbar from "../components/Navbar";
-import Questions from "../components/MockTests";
+import "./Landing.css";
 
 const Landing = () => {
   return (
-    <div>
+    <div className="landing-page">
       <Navbar />
-      <div className="row">
-        <p className="p-5 col">
+      <div className="container row bg-light">
+        <p className="p-5 col ">
           Click here to read the Handbook before you start solving the exam
           questions.
         </p>
@@ -16,7 +15,7 @@ const Landing = () => {
           Handbook
         </Link>
       </div>
-      <div className="row">
+      <div className="container row bg-light">
         <p className="p-5 col">Click here to access mock tests.</p>
         <Link to="/mockTests" className="col p-5">
           Mock Tests

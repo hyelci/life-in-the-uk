@@ -15,3 +15,8 @@ code {
 .navbar {
   height: 100px !important;
 }
+
+.btn {
+  width: 100px;
+  height: 50px;
+}

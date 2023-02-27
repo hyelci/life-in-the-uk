@@ -17,7 +17,7 @@ const HandbookDetails = () => {
   }, [id]);
 
   return (
-    <div>
+    <div className="container p-5">
       {handbookChapters.map((handbookChapter) => {
         return (
           <div key={handbookChapter.id}>

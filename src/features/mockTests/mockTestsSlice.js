@@ -6,6 +6,7 @@ const initialState = {
   mockTests: [],
   questions: [],
   questionNumber: 0,
+  isQuestionsLoading: true,
 };
 
 export const getMockTests = createAsyncThunk(
@@ -40,6 +41,13 @@ const mockTestsSlice = createSlice({
         state.questionNumber = payload - 1;
       }
     },
+    goToQuestion: (state, { payload }) => {
+      state.questionNumber = payload;
+    },
+
+    checkAnswer: (state, { payload }) => {
+      state.questions[state.questionNumber].userAnswer = payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -55,17 +63,18 @@ const mockTestsSlice = createSlice({
       })
 
       .addCase(getAllQuestions.pending, (state) => {
-        state.isLoading = true;
+        state.isQuestionsLoading = true;
       })
       .addCase(getAllQuestions.fulfilled, (state, { payload }) => {
-        state.isLoading = false;
+        state.isQuestionsLoading = false;
         state.questions = payload;
       })
       .addCase(getAllQuestions.rejected, (state, { payload }) => {
-        state.isLoading = false;
+        state.isQuestionsLoading = false;
       });
   },
 });
 
-export const { prevPage, nextPage } = mockTestsSlice.actions;
+export const { prevPage, nextPage, goToQuestion, checkAnswer } =
+  mockTestsSlice.actions;
 export default mockTestsSlice.reducer;
