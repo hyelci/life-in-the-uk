@@ -8,7 +8,7 @@ const Landing = () => {
       <Navbar />
       <div className="container row bg-light">
         <p className="p-5 col ">
-          Click here to read the Handbook before you start solving the exam
+          Click here to read the Handbook before you start looking at the exam
           questions.
         </p>
         <Link to="/handbook" className="p-5 col">

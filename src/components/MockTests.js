@@ -9,7 +9,7 @@ const MockTests = () => {
 
   useEffect(() => {
     dispatch(getMockTests());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="container list-group">

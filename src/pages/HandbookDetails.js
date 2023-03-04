@@ -5,16 +5,14 @@ import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 
 const HandbookDetails = () => {
-  const { handbookChapters, isLoading } = useSelector(
-    (store) => store.handbookTitles
-  );
+  const { handbookChapters } = useSelector((store) => store.handbookTitles);
   const dispatch = useDispatch();
 
   const { id } = useParams();
 
   useEffect(() => {
     dispatch(getHandbookChapters(id));
-  }, [id]);
+  }, [dispatch, id]);
 
   return (
     <div className="container p-5">

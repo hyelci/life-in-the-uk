@@ -10,7 +10,7 @@ const Handbook = () => {
 
   useEffect(() => {
     dispatch(getHandbook());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="p-5 container list-group ">

@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import {
-  changePage,
   getAllQuestions,
   nextPage,
   prevPage,
@@ -21,7 +20,7 @@ const Questions = () => {
 
   useEffect(() => {
     dispatch(getAllQuestions(id));
-  }, [id]);
+  }, [dispatch, id]);
 
   const getOptionClass = (index, isCorrect) => {
     if (typeof questions[questionNumber].userAnswer !== "undefined") {
@@ -64,7 +63,7 @@ const Questions = () => {
 
       <div className="row">
         <p className="pt-5">
-          <span>{questionNumber + 1 + " " + ")"} </span>
+          <span>{questionNumber + 1 + " )"} </span>
           {questions[questionNumber].text}
         </p>
       </div>
