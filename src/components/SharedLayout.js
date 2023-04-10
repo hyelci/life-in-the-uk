@@ -1,4 +1,5 @@
 import { Outlet } from "react-router";
+import Navbar from "./Navbar";
 import StyledNavbar from "./StyledNavbar";
 
 const Home = () => {
